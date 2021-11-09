@@ -5,7 +5,7 @@ The proliferation of social media platforms, recommender systems, and their join
 
 # Python code 
 
-Our experimental code has been written in Python3.  We recommend using a tool to manage Python virtual environments, such as [Miniconda](https://docs.conda.io/en/latest/miniconda.html)  There are several required Python packages:
+Our experimental code has been written in Python3.  We recommend using a tool to manage Python virtual environments, such as [Miniconda](https://docs.conda.io/en/latest/miniconda.html).  There are several required Python packages:
 - [NetworkX](https://networkx.org) for network/graph packages
 - [NumPy](https://numpy.org)
 - [SciPy](https://scipy.org)
@@ -17,6 +17,15 @@ Our experimental code has been written in Python3.  We recommend using a tool to
 1. **graphfunctions.py** ([see Section 2]()): Given a NetworkX graph and associated node opinions, we define functions which compute the Friedkin-Johnsen equilibrium, polarization, disagreement, and friend-of-friend recommendations.
 2. **generatedGraphExperiments.py**: Main Python script for all experiments performed on synthetic graphs, such as Erdos-Renyi and Barabasi-Albert graph models.  Each experiment is represented by one function, and the main function of the script executes a combination of the configured experiments in sequence.
 3. **realGraphExperiments.py**: Main Python script for experiments performed on real-world datasets, including friend-of-friend recommendations and confirmation bias edge removal.  The main function of the script executes the configured experiments on the selected real-world dataset.
+4. **realGraphData**: This folder contains three datasets from real social networks, represented as edge lists.  They can be loaded into experiments using the Python script **realGraphExperiments.py**.  Dataset references are listed below:
+
+## Dataset References
+
+**Twitter (Delhi 2013) & Reddit Datasets:**
+Abir De, Sourangshu Bhattacharya, Parantapa Bhattacharya, Niloy Ganguly, and Soumen Chakrabarti. 2019. Learning Linear Influence Models in Social Networks from Transient Opinion Dynamics. ACM Trans. Web 13, 3, Article 16 (November 2019), 33 pages. https://doi.org/10.1145/3343483
+
+**Facebook Egograph Dataset:**
+Julian McAuley and Jure Leskovec. 2012. Learning to discover social circles in ego networks. In Proceedings of the 25th International Conference on Neural Information Processing Systems - Volume 1 (NIPS'12). Curran Associates Inc., Red Hook, NY, USA, 539–547.
 
 # Reproducing Results
 
