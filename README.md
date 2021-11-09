@@ -22,17 +22,19 @@ Our experimental code has been written in Python3.  We recommend using a tool to
 ## Dataset References
 
 **Twitter (Delhi 2013) & Reddit Datasets:**
+
 Abir De, Sourangshu Bhattacharya, Parantapa Bhattacharya, Niloy Ganguly, and Soumen Chakrabarti. 2019. Learning Linear Influence Models in Social Networks from Transient Opinion Dynamics. ACM Trans. Web 13, 3, Article 16 (November 2019), 33 pages. https://doi.org/10.1145/3343483
 
 **Facebook Egograph Dataset:**
+
 Julian McAuley and Jure Leskovec. 2012. Learning to discover social circles in ego networks. In Proceedings of the 25th International Conference on Neural Information Processing Systems - Volume 1 (NIPS'12). Curran Associates Inc., Red Hook, NY, USA, 539–547.
 
 # Reproducing Results
 
 Given a correctly configured Python environment, with all of the described dependencies installed, one can reproduce our results by cloning this repository, and running either of the following in a command line at the root directory, for synthetic and real-world networks, respectively:
 
-- Synthetic networks: ``python3 generatedGraphExperiments.py``
-- Real-world datasets: ``python3 realGraphExperiments.py``
+- Synthetic networks: `` python3 generatedGraphExperiments.py ``
+- Real-world datasets: `` python3 realGraphExperiments.py ``
 
 
 # Citation
