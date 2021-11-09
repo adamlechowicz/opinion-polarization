@@ -116,9 +116,9 @@ def expReal(rootFolder):
 
     fb = nx.read_edgelist(fb_graph_list, create_using=nx.Graph(),nodetype=int)
     fb.name = "facebook"
-    fb2 = nx.k_core(fb, k=2)
-    fb2 = remap(fb2)
-    print(nx.info(fb2))
+    fb = nx.k_core(fb, k=2)
+    fb = remap(fb)
+    print(nx.info(fb))
 
     re = nx.parse_edgelist(reddit, delimiter=',', create_using=nx.Graph(), nodetype=int)
     re.name = "reddit"
@@ -137,7 +137,7 @@ def expReal(rootFolder):
     # innate_opinion2 = [np.random.normal(0.7,0.2) for _ in range(int(n/2))]
     # innate_opinion.extend(innate_opinion2)
     removal_edges = [0.1, 0.2, 0.3, 0.4, 0.5, 0.7]
-    realgraphs = [tw10]
+    realgraphs = [tw]
     polarizations = collections.defaultdict(list)
     disagreements = collections.defaultdict(list)
     snapshots = collections.defaultdict(list)
@@ -167,7 +167,7 @@ def expReal(rootFolder):
             opinions_over_time.append(innate_opinion)
 
             for i in tqdm(range(iterations)):
-                r = remove_edges(G, new_opinion, laplace, int(n*rem))
+                r = remove_edges(G, new_opinion, int(n*rem))
                 a = gf.add_new_friend_for_each_node(G,r,n)
                 laplace = nx.linalg.laplacian_matrix(G)
                 new_opinion = gf.change_fj_opinions(laplace, innate_opinion, identity)
