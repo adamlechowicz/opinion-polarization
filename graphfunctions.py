@@ -23,7 +23,7 @@ def calculate_polarization(opinions):
 def calculate_disagreement(laplace, opinions):
 
     #l = np.array(laplace.toarray())
-    return np.dot(np.dot(opinions.T,laplace), opinions)
+    return np.dot((opinions.T * laplace), opinions)
 
 
 #FOF Recommender
