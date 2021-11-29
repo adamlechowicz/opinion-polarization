@@ -42,7 +42,7 @@ Given a correctly configured Python environment, with all of the described depen
 > @misc{bhalla2021localedgedyn, 
 > title={Local Edge Dynamics and Opinion Polarization},
 > author={Nikita Bhalla and Adam Lechowicz and Cameron Musco},
-> eprint={1712.09948},
+> eprint={XXXx.XXXXx},
 > year={2021},
 > archivePrefix={arXiv},
 > primaryClass={cs.SI}}
