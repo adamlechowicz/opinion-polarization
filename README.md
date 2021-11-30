@@ -1,7 +1,7 @@
 # Local Edge Dynamics and Opinion Polarization (in submission)
 
 
-The proliferation of social media platforms, recommender systems, and their joint societal impacts have prompted significant interest in opinion formation and evolution within social networks. In this work, we study how local dynamics in a network can drive opinion polarization. In our paper [Local Edge Dynamics and Opinion Polarization](https://arxiv.org/abs/XXXXXXX), we study time evolving networks under the classic Friedkin-Johnsen opinion model. Edges are iteratively added or deleted according to simple local rules, modeling decisions based on individual preferences and network recommendations.
+The proliferation of social media platforms, recommender systems, and their joint societal impacts have prompted significant interest in opinion formation and evolution within social networks. In this work, we study how local dynamics in a network can drive opinion polarization. In our paper [Local Edge Dynamics and Opinion Polarization](https://arxiv.org/abs/2111.14020), we study time evolving networks under the classic Friedkin-Johnsen opinion model. Edges are iteratively added or deleted according to simple local rules, modeling decisions based on individual preferences and network recommendations.
 
 # Python code 
 
@@ -42,7 +42,7 @@ Given a correctly configured Python environment, with all of the described depen
 > @misc{bhalla2021localedgedyn, 
 > title={Local Edge Dynamics and Opinion Polarization},
 > author={Nikita Bhalla and Adam Lechowicz and Cameron Musco},
-> eprint={XXXx.XXXXx},
+> eprint={2111.14020},
 > year={2021},
 > archivePrefix={arXiv},
 > primaryClass={cs.SI}}
