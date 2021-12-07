@@ -172,7 +172,7 @@ def exp1(numDegree, rootFolder):
             os.makedirs(fig_folder)
         for i in range(26):
             for j in range(trials):
-                plt.hist(np.asnumpy(opinions[iter][j][i]), bins = numpy.arange(-1, 1, 0.05))
+                plt.hist(np.array(opinions[iter][j][i]), bins = numpy.arange(-1, 1, 0.05))
             plt.title("Histogram for graph size " + str(node) + " @ " + str(i*20) + " iterations")
             plt.savefig(fig_folder / str(i*20), facecolor='w', transparent=False)
             plt.clf()
@@ -190,7 +190,7 @@ def exp1(numDegree, rootFolder):
 
     print("Polarization plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_polarizations[i]))
+        plt.plot(iterations_array, np.array(final_polarizations[i]))
     plt.legend(nodes)
     plt.ylabel('Polarization')
     plt.savefig(fig_folder / "polarization_over_time", facecolor='w', transparent=False)
@@ -199,7 +199,7 @@ def exp1(numDegree, rootFolder):
     print("Plotting polarization versus nodes")
     final_p = []
     for i in range(length):
-      final_p.append(np.asnumpy(final_polarizations[i])[-1])
+      final_p.append(np.array(final_polarizations[i])[-1])
     plt.plot(nodes, final_p, marker='o')
     plt.ylabel('Polarization')
     plt.savefig(fig_folder / "polarization_vs_nodes", facecolor='w', transparent=False)
@@ -207,7 +207,7 @@ def exp1(numDegree, rootFolder):
 
     print("Disagreement plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_disagreements[i]))
+        plt.plot(iterations_array, np.array(final_disagreements[i]))
     plt.legend(nodes)
     plt.ylabel('Disagreement')
     plt.savefig(fig_folder / "disagreement_over_time", facecolor='w', transparent=False)
@@ -215,7 +215,7 @@ def exp1(numDegree, rootFolder):
 
     print("Polarization&Disagreement plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_polarizations[i])+np.asnumpy(final_disagreements[i]))
+        plt.plot(iterations_array, np.array(final_polarizations[i])+np.array(final_disagreements[i]))
     plt.legend(nodes)
     plt.ylabel('PD(L)')
     plt.savefig(fig_folder / "PDL_over_time", facecolor='w', transparent=False)
@@ -224,7 +224,7 @@ def exp1(numDegree, rootFolder):
     print("Plotting Disagreement versus nodes")
     final_d = []
     for i in range(length):
-      final_d.append(np.asnumpy(final_disagreements[i])[-1])
+      final_d.append(np.array(final_disagreements[i])[-1])
     plt.plot(nodes, final_d, marker='o')
     plt.ylabel('Disagreement')
     plt.savefig(fig_folder / "disagreement_vs_nodes", facecolor='w', transparent=False)
@@ -244,7 +244,7 @@ def exp3(rootFolder):
     iterations = 5000
     identity = np.identity(n, dtype = float)
 
-    connection_probs = [0.025, 0.04, 0.042, 0.045, 0.047, 0.05, 0.052, 0.055, 0.057, 0.06, 0.075, 0.1]
+    connection_probs = [0.025, 0.04, 0.05, 0.06, 0.075, 0.1]
     trials = 5
     polarizations = collections.defaultdict(list)
     disagreements = collections.defaultdict(list)
@@ -297,7 +297,7 @@ def exp3(rootFolder):
             os.makedirs(fig_folder)
         for i in range(26):
             for j in range(trials):
-                plt.hist(np.asnumpy(opinions[iter][j][i]), bins = numpy.arange(-1, 1, 0.05))
+                plt.hist(np.array(opinions[iter][j][i]), bins = numpy.arange(-1, 1, 0.05))
             plt.title("Histogram for connection probability " + str(probs) + " @ " + str(i*20) + " iterations")
             plt.savefig(fig_folder / str(i*20), facecolor='w', transparent=False)
             plt.clf()
@@ -315,7 +315,7 @@ def exp3(rootFolder):
 
     print("Polarization plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_polarizations[i]))
+        plt.plot(iterations_array, np.array(final_polarizations[i]))
     plt.legend(connection_probs)
     plt.ylabel('Polarization')
     plt.savefig(fig_folder / "polarization_over_time", facecolor='w', transparent=False)
@@ -324,7 +324,7 @@ def exp3(rootFolder):
     print("Plotting polarization versus Connection probs")
     final_p = []
     for i in range(length):
-      final_p.append(np.asnumpy(final_polarizations[i])[-1])
+      final_p.append(np.array(final_polarizations[i])[-1])
     plt.plot(connection_probs, final_p, marker='o')
     plt.ylabel('Polarization')
     plt.savefig(fig_folder / "polarization_vs_probs", facecolor='w', transparent=False)
@@ -332,7 +332,7 @@ def exp3(rootFolder):
 
     print("Disagreement plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_disagreements[i]))
+        plt.plot(iterations_array, np.array(final_disagreements[i]))
     plt.legend(connection_probs)
     plt.ylabel('Disagreement')
     plt.savefig(fig_folder / "disagreement_over_time", facecolor='w', transparent=False)
@@ -340,7 +340,7 @@ def exp3(rootFolder):
 
     print("Polarization&Disagreement plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_polarizations[i])+np.asnumpy(final_disagreements[i]))
+        plt.plot(iterations_array, np.array(final_polarizations[i])+np.array(final_disagreements[i]))
     plt.legend(connection_probs)
     plt.ylabel('PD(L)')
     plt.savefig(fig_folder / "PDL_over_time", facecolor='w', transparent=False)
@@ -349,7 +349,7 @@ def exp3(rootFolder):
     print("Plotting disagreement versus Connection probs")
     final_d = []
     for i in range(length):
-      final_d.append(np.asnumpy(final_disagreements[i])[-1])
+      final_d.append(np.array(final_disagreements[i])[-1])
     plt.plot(connection_probs, final_d, marker='o')
     plt.ylabel('Disagreement')
     plt.savefig(fig_folder / "disagreement_vs_connprob", facecolor='w', transparent=False)
@@ -422,7 +422,7 @@ def exp4(rootFolder):
             os.makedirs(fig_folder)
         for i in range(26):
             for j in range(trials):
-                plt.hist(np.asnumpy(opinions[iter][j][i]), bins = numpy.arange(-1, 1, 0.05))
+                plt.hist(np.array(opinions[iter][j][i]), bins = numpy.arange(-1, 1, 0.05))
             plt.title("Histogram for removing edge percentage " + str(rem) + " @ " + str(i*20) + " iterations")
             plt.savefig(fig_folder / str(i*20), facecolor='w', transparent=False)
             plt.clf()
@@ -440,7 +440,7 @@ def exp4(rootFolder):
 
     print("Polarization plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_polarizations[i]))
+        plt.plot(iterations_array, np.array(final_polarizations[i]))
     plt.legend(removal_edges)
     plt.ylabel('Polarization')
     plt.savefig(fig_folder / "polarization_over_time", facecolor='w', transparent=False)
@@ -449,7 +449,7 @@ def exp4(rootFolder):
     print("Plotting polarization versus Edge Removal")
     final_p = []
     for i in range(length):
-      final_p.append(np.asnumpy(final_polarizations[i])[-1])
+      final_p.append(np.array(final_polarizations[i])[-1])
     plt.plot(removal_edges, final_p, marker='o')
     plt.ylabel('Polarization')
     plt.savefig(fig_folder / "polarization_vs_edges", facecolor='w', transparent=False)
@@ -457,7 +457,7 @@ def exp4(rootFolder):
 
     print("Disagreement plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_disagreements[i]))
+        plt.plot(iterations_array, np.array(final_disagreements[i]))
     plt.legend(removal_edges)
     plt.ylabel('Disagreement')
     plt.savefig(fig_folder / "disagreement_over_time", facecolor='w', transparent=False)
@@ -465,7 +465,7 @@ def exp4(rootFolder):
 
     print("Polarization&Disagreement plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_polarizations[i])+np.asnumpy(final_disagreements[i]))
+        plt.plot(iterations_array, np.array(final_polarizations[i])+np.array(final_disagreements[i]))
     plt.legend(removal_edges)
     plt.ylabel('PD(L)')
     plt.savefig(fig_folder / "PDL_over_time", facecolor='w', transparent=False)
@@ -474,7 +474,7 @@ def exp4(rootFolder):
     print("Plotting disagreement versus Edge Removal")
     final_d = []
     for i in range(length):
-      final_d.append(np.asnumpy(final_disagreements[i])[-1])
+      final_d.append(np.array(final_disagreements[i])[-1])
     plt.plot(removal_edges, final_d, marker='o')
     plt.ylabel('Disagreement')
     plt.savefig(fig_folder / "disagreement_vs_edges", facecolor='w', transparent=False)
@@ -560,7 +560,7 @@ def exp6(rootFolder):
             os.makedirs(fig_folder)
         for i in range(26):
             for j in range(trials):
-                plt.hist(np.asnumpy(opinions[iter][j][i]), bins = numpy.arange(-1, 1, 0.05))
+                plt.hist(np.array(opinions[iter][j][i]), bins = numpy.arange(-1, 1, 0.05))
             plt.title("Histogram for fixed edges percent " + str(per) + " @ " + str(i*20) + " iterations")
             plt.savefig(fig_folder / str(i*20), facecolor='w', transparent=False)
             plt.clf()
@@ -578,7 +578,7 @@ def exp6(rootFolder):
 
     print("Polarization plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_polarizations[i]))
+        plt.plot(iterations_array, np.array(final_polarizations[i]))
     plt.legend(set_percent)
     plt.ylabel('Polarization')
     plt.savefig(fig_folder / "polarization_over_time", facecolor='w', transparent=False)
@@ -587,7 +587,7 @@ def exp6(rootFolder):
     print("Plotting polarization versus fixed percent")
     final_p = []
     for i in range(length):
-      final_p.append(np.asnumpy(final_polarizations[i])[-1])
+      final_p.append(np.array(final_polarizations[i])[-1])
     plt.plot(set_percent, final_p, marker='o')
     plt.ylabel('Polarization')
     plt.savefig(fig_folder / "polarization_vs_nodes", facecolor='w', transparent=False)
@@ -595,7 +595,7 @@ def exp6(rootFolder):
 
     print("Disagreement plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_disagreements[i]))
+        plt.plot(iterations_array, np.array(final_disagreements[i]))
     plt.legend(set_percent)
     plt.ylabel('Disagreement')
     plt.savefig(fig_folder / "disagreement_over_time", facecolor='w', transparent=False)
@@ -603,7 +603,7 @@ def exp6(rootFolder):
 
     print("Polarization&Disagreement plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_polarizations[i])+np.asnumpy(final_disagreements[i]))
+        plt.plot(iterations_array, np.array(final_polarizations[i])+np.array(final_disagreements[i]))
     plt.legend(set_percent)
     plt.ylabel('PD(L)')
     plt.savefig(fig_folder / "PDL_over_time", facecolor='w', transparent=False)
@@ -612,7 +612,7 @@ def exp6(rootFolder):
     print("Plotting Disagreement versus fixed percent")
     final_d = []
     for i in range(length):
-      final_d.append(np.asnumpy(final_disagreements[i])[-1])
+      final_d.append(np.array(final_disagreements[i])[-1])
     plt.plot(set_percent, final_d, marker='o')
     plt.ylabel('Disagreement')
     plt.savefig(fig_folder / "disagreement_vs_nodes", facecolor='w', transparent=False)
@@ -621,10 +621,10 @@ def exp6(rootFolder):
 
 if (__name__ == '__main__'):
     exp1(20,"exp1/")
-    exp1(40,"exp2/")
-    exp3("exp3/")
-    exp4("exp4/")
-    exp6("exp6/")
+    #exp1(40,"exp2/")
+    #exp3("exp3/")
+    #exp4("exp4/")
+    #exp6("exp6/")
 
 exit()
 

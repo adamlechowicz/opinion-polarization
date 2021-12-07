@@ -195,7 +195,7 @@ def expReal(rootFolder):
         if not os.path.isdir(rem_folder):
             os.makedirs(rem_folder)
         for i in range(10):
-            plt.hist(np.asnumpy(opinions[iter][0][i]), bins = numpy.arange(-1, 1, 0.05))
+            plt.hist(np.array(opinions[iter][0][i]), bins = numpy.arange(-1, 1, 0.05))
             plt.title("Histogram for removing edge percentage " + str(rem) + " @ " + str(i*1000) + " iterations")
             plt.savefig(rem_folder / str(i*1000), facecolor='w', transparent=False)
             plt.clf()
@@ -216,7 +216,7 @@ def expReal(rootFolder):
 
     print("Polarization plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_polarizations[i]))
+        plt.plot(iterations_array, np.array(final_polarizations[i]))
     plt.legend(removal_edges)
     plt.ylabel('Polarization')
     plt.savefig(fig_folder / "polarization_over_time", facecolor='w', transparent=False)
@@ -225,7 +225,7 @@ def expReal(rootFolder):
     print("Plotting polarization versus Edge Removal")
     final_p = []
     for i in range(length):
-        final_p.append(np.asnumpy(final_polarizations[i])[-1])
+        final_p.append(np.array(final_polarizations[i])[-1])
     plt.plot(removal_edges, final_p, marker='o')
     plt.ylabel('Polarization')
     plt.savefig(fig_folder / "polarization_vs_edges", facecolor='w', transparent=False)
@@ -233,7 +233,7 @@ def expReal(rootFolder):
 
     print("Disagreement plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_disagreements[i]))
+        plt.plot(iterations_array, np.array(final_disagreements[i]))
     plt.legend(removal_edges)
     plt.ylabel('Disagreement')
     plt.savefig(fig_folder / "disagreement_over_time", facecolor='w', transparent=False)
@@ -241,7 +241,7 @@ def expReal(rootFolder):
 
     print("Polarization&Disagreement plot over time")
     for i in range(length):
-        plt.plot(iterations_array, np.asnumpy(final_polarizations[i])+np.asnumpy(final_disagreements[i]))
+        plt.plot(iterations_array, np.array(final_polarizations[i])+np.array(final_disagreements[i]))
     plt.legend(removal_edges)
     plt.ylabel('PD(L)')
     plt.savefig(fig_folder / "PDL_over_time", facecolor='w', transparent=False)
@@ -250,7 +250,7 @@ def expReal(rootFolder):
     print("Plotting disagreement versus Edge Removal")
     final_d = []
     for i in range(length):
-        final_d.append(np.asnumpy(final_disagreements[i])[-1])
+        final_d.append(np.array(final_disagreements[i])[-1])
     plt.plot(removal_edges, final_d, marker='o')
     plt.ylabel('Disagreement')
     plt.savefig(fig_folder / "disagreement_vs_edges", facecolor='w', transparent=False)
