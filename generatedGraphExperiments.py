@@ -621,10 +621,10 @@ def exp6(rootFolder):
 
 if (__name__ == '__main__'):
     exp1(20,"exp1/")
-    #exp1(40,"exp2/")
-    #exp3("exp3/")
-    #exp4("exp4/")
-    #exp6("exp6/")
+    exp1(40,"exp2/")
+    exp3("exp3/")
+    exp4("exp4/")
+    exp6("exp6/")
 
 exit()
 
