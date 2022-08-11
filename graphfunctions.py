@@ -5,6 +5,8 @@ import numpy
 import scipy as sp
 import networkx as nx
 import math
+import random
+from random import randrange
 
 def change_fj_opinions(laplace, innate_opinion, identity):
 
@@ -17,7 +19,7 @@ def change_fj_opinions(laplace, innate_opinion, identity):
 
 def calculate_polarization(opinions):
 
-    return opinions.var()
+    return opinions.var() * len(opinions)
 
 
 def calculate_disagreement(laplace, opinions):
@@ -87,15 +89,13 @@ def add_new_friend_for_each_node(G, to_add, n):
 def add_new_RANDOM_friend_for_each_node(G, to_add, n):
     new_edges_to_add = set()
     edges_list = set(G.edges)
-    shuffled = np.random.shuffle(np.arange(n))
 
-    for node in shuffled:
+    while len(new_edges_to_add) < to_add:
+        node = random.randint(0, n - 1)
         ftA = random.randint(0, n - 1)
         if ftA != node:
             if not ((ftA, node) in new_edges_to_add or (node, ftA) in new_edges_to_add) or (ftA, node) in edges_list or (node, ftA) in edges_list:
                 new_edges_to_add.add((node, ftA))
-        if len(new_edges_to_add) == to_add:
-            break
 
     G.add_edges_from(new_edges_to_add)
 
