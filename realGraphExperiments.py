@@ -38,13 +38,10 @@ def remove_edges(G, new_opinion, n):
     to_remove = choice(np.arange(n_edges), n, replace=False, p=disr)
     to_remove_edges = edges_list[to_remove]
 
-    counter = 0
     for u,v in to_remove_edges:
-        if G.degree[u] != 1 and G.degree[v] != 1:
-            G.remove_edge(u, v)
-            counter += 1
+        G.remove_edge(u, v)
 
-    return counter
+    return len(to_remove_edges)
 
 def remove_RANDOM_edges(G, new_opinion, n):
     #Forming a distribution of edges and removig n of them
@@ -54,13 +51,10 @@ def remove_RANDOM_edges(G, new_opinion, n):
     to_remove = choice(np.arange(n_edges), n, replace=False)
     to_remove_edges = edges_list[to_remove]
 
-    counter = 0
     for u,v in to_remove_edges:
-        if G.degree[u] != 1 and G.degree[v] != 1:
-            G.remove_edge(u, v)
-            counter += 1
+        G.remove_edge(u, v)
 
-    return counter
+    return len(to_remove_edges)
 
 def remove_edges_not_in_list(G, new_opinion, n, off_limits_set):
     #Forming a distribution of edges and removig n of them
@@ -85,13 +79,10 @@ def remove_edges_not_in_list(G, new_opinion, n, off_limits_set):
     to_remove = choice(np.arange(n_edges), n, replace=False, p=(disr))
     to_remove_edges = edges_list[to_remove]
 
-    counter = 0
     for u,v in to_remove_edges:
-        if G.degree[u] != 1 and G.degree[v] != 1:
-            G.remove_edge(u, v)
-            counter += 1
+        G.remove_edge(u, v)
 
-    return counter
+    return len(to_remove_edges)
 
 def remap(G):
     mapping = {}
