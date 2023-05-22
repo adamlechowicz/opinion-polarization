@@ -1,5 +1,6 @@
 # Local Edge Dynamics and Opinion Polarization
 
+[<img src="https://img.shields.io/badge/Full%20Paper-2111.14020-B31B1B.svg?style=flat-square&logo=arxiv" height="25">](https://arxiv.org/abs/2111.14020)
 
 The proliferation of social media platforms, recommender systems, and their joint societal impacts have prompted significant interest in opinion formation and evolution within social networks. In this work, we study how local dynamics in a network can drive opinion polarization. In our paper [Local Edge Dynamics and Opinion Polarization](https://arxiv.org/abs/2111.14020), we study time evolving networks under the classic Friedkin-Johnsen opinion model. Edges are iteratively added or deleted according to simple local rules, modeling decisions based on individual preferences and network recommendations.
 
