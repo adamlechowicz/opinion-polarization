@@ -13,7 +13,7 @@ Our experimental code has been written in Python3.  We recommend using a tool to
 - [tqdm](https://github.com/tqdm/tqdm) for CLI progress bar
 - [Matplotlib](https://matplotlib.org) for creating plots
 
-** NOTE: this code is not compatible with NetworkX versions >= 3.0.0 due to a memory leak issue. Please use this code with an installation of NetworkX 2.x.x.**
+**NOTE: this code is not compatible with NetworkX versions >= 3.0.0 due to a memory leak issue. Please use this code with an installation of NetworkX 2.x.x.**
 
 # Files and Descriptions
 
